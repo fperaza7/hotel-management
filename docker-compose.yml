@@ -8,9 +8,8 @@ services:
     volumes:
       - ./hotel-management-api:/var/www/html:rw
     working_dir: /var/www/html
-    command: php artisan serve --host=0.0.0.0 --port=8000
     ports:
-      - "8000:8000"
+      - "8888:80"
     depends_on:
       - database
 
@@ -24,3 +23,15 @@ services:
       - "54321:5432"
     volumes:
       - ./hotel-management-data/postgres:/var/lib/postgresql/data:rw
+  
+  webapp:
+    build:
+      context: ./hotel-management-webapp
+      dockerfile: Dockerfile
+    volumes:
+      - ./hotel-management-webapp:/app:rw
+    working_dir: /app
+    ports:
+      - "3333:80"
+    depends_on:
+      - api

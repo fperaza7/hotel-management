@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     && docker-php-ext-install pdo_pgsql
 
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2.5 /usr/bin/composer /usr/bin/composer
 
 RUN useradd -u 1000 -m dockeruser && \
     chown -R dockeruser:dockeruser /var/www/html
@@ -17,4 +17,6 @@ WORKDIR /var/www/html
 
 COPY . .
 
-EXPOSE 8000
+EXPOSE 80
+
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=80"]
