@@ -8,14 +8,16 @@ RUN apt-get update && apt-get install -y \
 
 COPY --from=composer:2.5 /usr/bin/composer /usr/bin/composer
 
+WORKDIR /var/www/html
+
+COPY . .
+
+RUN composer install --no-dev --optimize-autoloader
+
 RUN useradd -u 1000 -m dockeruser && \
     chown -R dockeruser:dockeruser /var/www/html
 
 USER dockeruser
-
-WORKDIR /var/www/html
-
-COPY . .
 
 EXPOSE 80
 
