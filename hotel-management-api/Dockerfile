@@ -14,6 +14,9 @@ COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
 
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
 RUN useradd -u 1000 -m dockeruser && \
     chown -R dockeruser:dockeruser /var/www/html
 
@@ -21,4 +24,4 @@ USER dockeruser
 
 EXPOSE 80
 
-CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=80"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
