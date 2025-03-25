@@ -23,3 +23,5 @@ RUN useradd -u 1000 -m dockeruser && \
 USER dockeruser
 
 EXPOSE 80
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
