@@ -23,8 +23,8 @@ Tener instalado:
 
 ### Clonar el repositorio
 ```
-git clone <URL_DEL_REPOSITORIO>
-cd <NOMBRE_DEL_REPOSITORIO>
+git clone https://github.com/fperaza7/hotel-management.git
+cd hotel-management
 ```
 ### Configurar la API
 1. Copiar el archivo .env.example de la carpeta hotel-management-api y renómbralo como .env.
