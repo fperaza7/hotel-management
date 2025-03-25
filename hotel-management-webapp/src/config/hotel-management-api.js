@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const hotelManagementApi = axios.create({
-  baseURL: "http://localhost:8888/api", // TODO: Add env
+  baseURL: `${import.meta.env.VITE_API_BASE_URL}/api`,
   timeout: 5000,
 });
 
