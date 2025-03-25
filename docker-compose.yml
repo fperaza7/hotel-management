@@ -10,6 +10,7 @@ services:
     working_dir: /var/www/html
     ports:
       - "8888:80"
+    entrypoint: ["/usr/local/bin/entrypoint.sh"]
     depends_on:
       - database
 
