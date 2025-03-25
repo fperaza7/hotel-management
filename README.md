@@ -5,9 +5,8 @@ Este proyecto contiene una API desarrollada en Laravel y una aplicación web des
 
 ## Ejemplo en producción
 
-La aplicación ha sido desplegada en Render Cloud utilizando contenedores para la API y la aplicación web, además de una instancia de PostgreSQL. Para visualizar el ejemplo se puede acceder al siguiente enlace:
-[https://hotel-management-1-luz8.onrender.com/](https://hotel-management-1-luz8.onrender.com/)
-
+La aplicación ha sido desplegada en Render Cloud utilizando contenedores para la API y la aplicación web, además de una instancia de PostgreSQL. Para visualizar el ejemplo se puede acceder al siguiente enlace:  
+<a href="https://hotel-management-1-luz8.onrender.com/" target="_blank">https://hotel-management-1-luz8.onrender.com/</a>
 
 
 ## Instalación
